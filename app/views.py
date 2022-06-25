@@ -23,7 +23,6 @@ def index2(request):
 
 @login_required
 def carrito(request):
-    discount = 0.0
 
     carrito = Productos_carrito.objects.all().raw(
         "SELECT codigoCarrito, nombreProducto, CAST(COUNT(nombreProducto) AS INT) AS cantidad, CAST(sum(precioProducto) AS FLOAT) AS montoTotal FROM db_producto_carrito GROUP BY nombreProducto")
