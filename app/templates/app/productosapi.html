@@ -1,0 +1,56 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+
+
+
+
+
+<!--Sección de api-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-destacados">PRODUCTOS API</h4>
+            {% for aux in listaJson %}
+            {% if aux.tipo.tipo == 'Flores' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 440px;">
+                    {% if aux.imagen %}
+                    <img src="{{ aux.imagen }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;" class="btn btn-primary btn-sm ml-auto" >
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>   
+</section>
+
+{% endblock %}

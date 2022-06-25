@@ -1,0 +1,35 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+<section class="py-4 osahan-main-body">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-6 offset-md-3">
+                <h4>Modificar Cliente</h4>
+                <br>
+                <form action="" method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <table>
+                        {{ form1|crispy }}
+                    </table>
+
+                    <div class="d-flex justify-content-end">
+                        <input type="submit" class="btn btn-success mt-2" value="Guardar">
+                        &nbsp;
+                        <input type="reset" value="Cancelar" class="btn btn-danger mt-2">
+                    </div>
+                </form>
+                {{ mensaje }}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

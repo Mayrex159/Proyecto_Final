@@ -1,0 +1,642 @@
+/*Estilo de las alertas*/
+.color{
+    font-style: italic;
+    color: red;
+}
+
+/*Estructura general*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Login --> imagen */
+.bg {
+    background-image: url(../img/cerezo.jpg);
+    background-position: center center;
+}
+
+/*Color de fondo login*/
+.cuerpo-body1 {
+    background-color: rgb(215, 189, 226);
+}
+
+/*Titulo Login --> cambiar tipo de letra y color*/
+.fw-bold {
+    font-family: serif;
+    color: rgb(128, 4, 150);
+}
+
+/*REGISTRO CLIENTES*/
+.body_cliente {
+    background-image: url(../img/fondo1.jfif);
+    background-size: cover;
+}
+
+.form-registro {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: serif;
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-registro h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.control {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: serif;
+    font-size: 18px;
+    color: white;
+}
+
+.form-registro .form-check-label {
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.form-registro .btn {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+
+/*PAGINA INICIO*/
+/*lOGOTIPO*/
+.logotipo {
+    width: 100px;
+    
+}
+
+/*Color fondo páginas*/
+body {
+    background-color: rgb(245, 238, 248);
+}
+
+/*Color letra texto index*/
+.text-h2 {
+    color: rgb(128, 4, 150);
+    padding: 20px;
+    font-family: serif;
+}
+
+/*Color letra text productos destacados*/
+.productos-destacados {
+    text-align: center;
+    padding: 20px;
+    font-family: serif;
+}
+
+/*Color text de las tarjetas*/
+.card-body .card-title {
+    color: rgb(0, 0, 0);
+    font-family: serif;
+    text-align: center;
+}
+
+
+.card-body .card-text {
+    font-size: small;
+}
+
+.stock {
+    display: flex;
+    font-size: x-small;
+    font-style: normal;
+    color: gray;
+}
+
+/*OFERTA EN CARDS*/
+.oferta{
+    background-color: #1fa02e;
+    padding: 2px 8px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+
+
+/*Color letra text productos destacados*/
+.productos-mes {
+    text-align: center;
+    padding: 20px;
+    font-family: serif;
+}
+
+
+/*Footer*/
+.d-flex {
+    background-color: rgb(245, 238, 248);
+    width: 100%;
+    padding: 0px 20px;
+    align-items: center;
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    bottom: 0;
+}
+
+/*CONTENEDOR*/
+.container-1{
+    width: 80%;
+    min-height: 100vh;
+    margin: 10px auto;
+    
+}
+
+.footer{
+ width: 100%;
+ height: 200px;
+background-color: gray;
+}
+
+
+/*Navbar*/
+.navbar {
+    background-color: black;
+}
+
+.nav-link .usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+/*Sección de cartas efecto de aumento de tamaño*/
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.55s;
+}
+
+/*iconos fa efectos*/
+.nav-link .fa {
+    transition: all 1s;
+}
+
+.nav-link:hover .fa {
+    transform: rotateY(360deg);
+}
+
+/*SUSCRIPCIÓN*/
+
+.conten-sus h2 {
+    color: black;
+    font-size: 30px;
+    font-family: serif;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.conten-sus p {
+    color: black;
+    font-size: 17px;
+    font-family: serif;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.conten-sus form .email {
+    padding: 5px;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+    outline: 0px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.conten-sus form .btn-sus {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(221, 16, 149);
+    font-family: serif;
+    font-style: italic;
+    color: white;
+    cursor: pointer;
+}
+
+/*Icono de suscripción!*/
+.conten-sus form .btn-sus:hover {
+    background: rgb(181, 14, 122);
+}
+
+.conten-sus form .fa {
+    transition: all 1s;
+}
+
+.conten-sus form .fa:hover {
+    transform: rotate(-55deg);
+}
+
+/*Modal ---> Al apretar suscribir*/
+
+.modal-header .modal-title {
+    font-family: serif;
+    color: rgb(181, 14, 122);
+    font-style: italic;
+}
+
+.modal-body h5 {
+    font-family: serif;
+    font-style: italic;
+}
+
+/*Carrito de Compras*/
+.titulo-carrito {
+    font-family: serif;
+    text-align: center;
+    padding: 50px;
+    margin: 20px;
+    font-style: italic;
+}
+
+/*Tabla productos*/
+.table {
+    font-family: serif;
+    font-style: italic;
+}
+
+.table .x {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgba(226, 31, 17, 0.226);
+    border: none;
+}
+
+.table .x:hover {
+    background-color: rgba(194, 28, 16, 0.507);
+}
+
+/*Tabla total*/
+.tablita {
+    margin-left: 310px;
+    text-align: center;
+    font-family: serif;
+}
+
+.tablita td {
+    width: 10em;
+}
+
+.btn-pagar {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(40, 186, 45);
+    color: white;
+    cursor: pointer;
+    width: 100px;
+}
+
+.btn-pagar:hover {
+    background-color: rgb(31, 106, 34);
+}
+
+/*PAGINA HISTORIAL DE PEDIDOS*/
+/*Boton volver*/
+.btn-volver {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(221, 16, 149);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.btn-volver:hover {
+    background-color: rgb(181, 14, 122);
+}
+
+
+/*Descuento*/
+.container-fluid .conten-des h6 {
+    color: black;
+    font-family: serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.d-flex .container-fluid .conten-des p {
+    color: black;
+    font-family: serif;
+    text-align: left;
+}
+
+.d-flex .container-fluid .conten-des form .descuento {
+    padding: 5px;
+    width: 30%;
+    border-radius: 5px;
+    border: none;
+    outline: 0px;
+    font-family: serif;
+    font-style: italic;
+    text-align: left;
+}
+
+.d-flex .container-fluid .conten-des form .btn-des {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(221, 16, 149);
+    font-family: serif;
+    font-style: italic;
+    color: white;
+    cursor: pointer;
+}
+
+.d-flex .container-fluid .conten-des form .btn-des:hover {
+    background: rgb(181, 14, 122);
+    justify-content: space-between;
+}
+
+/*CONTENEDOR PAGINA DESPACHO*/
+.contenedor1 {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10% 10px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.contenedor1 .col-12-sm {
+    background-color: rgb(235, 222, 240);
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.titulo {
+    display: block;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    text-align: center;
+}
+
+/*BOTON BUSCAR PEDIDO*/
+.btn-buscar {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(106, 0, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background-color: rgb(76, 8, 186);
+
+}
+
+.despacho form .fa {
+    transition: all 1s;
+}
+
+.despacho form .fa:hover {
+    transform: rotateY(360deg);
+}
+
+
+/*PERFIL DE USUARIO*/
+
+
+
+
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgb(221, 16, 149), transparent);
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 17rem;
+    background-image: linear-gradient(45deg,rgb(76, 8, 186), rgb(221, 16, 149));
+    border-radius: 0 0 20px 20px;
+    /*
+    background-image: url('http://localhost/multimedia/png/user-portada-3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
+    margin-right: 1rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+    font-family: serif;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    
+}
+
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+    font-family: serif;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
+}
+
+.seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.seccion-perfil-usuario .redes-sociales {
+    position: absolute;
+    right: calc(0px - 50px - 1rem);
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes {
+    border: 0;
+    background-color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    font-size: 1.3rem;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+    margin-top: .5rem;
+}
+
+.seccion-perfil-usuario .boton-redes.facebook {
+    background-color: #5955FF;
+}
+
+.seccion-perfil-usuario .boton-redes.twitter {
+    background-color: #35E1BF;
+}
+
+.seccion-perfil-usuario .boton-redes.instagram {
+    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+}
+
+/* adaptacion a dispositivos */
+@media (max-width: 750px) {
+    .seccion-perfil-usuario .lista-datos {
+        width: 100%;
+    }
+
+    .seccion-perfil-usuario .perfil-usuario-portada,
+    .seccion-perfil-usuario .perfil-usuario-body {
+        width: 95%;
+    }
+
+    .seccion-perfil-usuario .redes-sociales {
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center
+    }
+
+    .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+}

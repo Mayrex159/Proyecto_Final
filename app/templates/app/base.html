@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&C Flower Shop</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css ' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css ' %}">
+
+</head>
+
+<body>
+    <!-- Menú navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <!--Inicio .container-->
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img class="logotipo" src="{% static 'app/img/logo.png' %}" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">
+                            <i class="fa fa-house-chimney"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" onclick="LOGEATE()" role="button" id="navbarScrollingDropdown"
+                            aria-expanded="false">
+                            <i class="fa fa-basket-shopping"></i>
+                            Productos
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" onclick="LOGEATE()" id="navbarScrollingDropdown" role="button"
+                            aria-expanded="false">
+                            <i class="fa fa-cart-shopping"></i>
+                            Carrito
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="fa fa-user-ninja"></i>
+                            
+                            Iniciar Sesión</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--Fin .container-->
+    </nav>
+
+    <!--SECCION BLOCK CONTENIDO-->
+    {% block contenido %}
+
+
+    <!--FIN SECCION BLOCK CONTENIDO-->
+    {% endblock %}
+
+    <footer>
+        <div class="d-flex justify-content-between" style="background-color:rgb(229, 229, 229);">
+            <p>© 2022 M&C Flower Shop tu tienda de plantas online.</p>
+            <img src="{% static 'app/img/webpayplus.png' %}" width="250" alt="">
+        </div>
+    </footer>
+
+
+    <!--Scripts-->
+    <script src="https://kit.fontawesome.com/ead5860e29.js" crossorigin="anonymous"></script>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{% static 'app/js/sweetalert.js' %}"></script>
+    <script src="{% static 'app/js/carrito.js' %}"></script>
+</body>
+
+</html>

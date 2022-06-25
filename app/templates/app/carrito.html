@@ -1,0 +1,79 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block contenido %}
+<script>
+
+</script> 
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 ">
+            <h2 class="titulo-carrito">Carrito de Compras </h2>
+            <table class="table table-responsive-sm">
+                <thead>
+                    <tr>
+
+                        <th>Imagen</th>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Precio Normal</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aux in listaCarrito %}
+                    <tr>
+                        <td>
+                            <div class="" style="width:100px; height: 200px;">
+                                {% if aux.imagen %}
+                                <img src="{{ aux.imagen }}" class="card-img-top">
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td>
+                           {{ aux.cantidad }}
+                        </td>
+                        <td>
+                            
+                            {{ aux.nombreProducto }}
+                        </td>
+                        <td>
+                            ${{ aux.precioProducto| intcomma }}
+
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-end p-5" >
+
+                <div class="container2 m-5">
+                    <table class="p-">
+                        <tr>
+                            <td>Subtotal: </td>
+                            <td>${{ subTotal| intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td>Descuento:  </td>
+                            <td>${{ descuento| intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total a pagar:  </td>
+                            <td>${{ TotalaPagar| intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <form action="">
+                                <td><input type="button" onclick="pagarCarrito()" value="Pagar" style="cursor: pointer;" class="btn btn-success  ml-auto"></td>
+                            </form>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

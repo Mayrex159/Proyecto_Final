@@ -1,0 +1,282 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+
+
+<!--Primera Sección de ESPECIAL DÍA DE LAS MADRES-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-destacados">PRODUCTOS DESTACADOS</h4>
+            {% for aux in productos %}
+            {% if aux.tipo.tipo == 'Flores' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 440px;">
+                    {% if aux.imagenes %}
+                    <img src="{{ aux.imagen.url }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            
+                            {% if perms.app.view_suscripcion %}
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+
+                            {% endif %}
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;"
+                                class="btn btn-primary btn-sm ml-auto">
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--Segunda Sección de UN ÁRBOL ES NUESTRO CONTACTO MÁS ÍNTIMO CON LA NATURALEZA-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-mes">UN ÁRBOL ES NUESTRO CONTACTO MÁS ÍNTIMO CON LA NATURALEZA</h4>
+            {% for aux in productos %}
+            {% if aux.tipo.tipo == 'Cactus' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 435px;">
+                    {% if aux.imagen %}
+                    <img src="{{ aux.imagen.url }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;"
+                                class="btn btn-primary btn-sm ml-auto">
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--Tercera Sección de DETALLES ROMÁNTICOS QUE ENAMORAN-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-destacados">DETALLES ROMÁNTICOS QUE ENAMORAN</h4>
+            {% for aux in productos %}
+            {% if aux.tipo.tipo == 'Arbustos' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 435px;">
+                    {% if aux.imagen %}
+                    <img src="{{ aux.imagen.url }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;"
+                                class="btn btn-primary btn-sm ml-auto">
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--Cuarta Sección de EL JARDÍN ES UNA DELICIA PARA LA VISTA-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-mes">EL JARDÍN ES UNA DELICIA PARA LA VISTA</h4>
+            {% for aux in productos %}
+            {% if aux.tipo.tipo == 'Maceteros' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 435px;">
+                    {% if aux.imagen %}
+                    <img src="{{ aux.imagen.url }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;"
+                                class="btn btn-primary btn-sm ml-auto">
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--Quinta Sección de productos destacados-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-mes">RIÉGAME DE VEZ EN CUANDO...</h4>
+            {% for aux in productos %}
+            {% if aux.tipo.tipo == 'Jardineria' %}
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 435px;">
+                    {% if aux.imagen %}
+                    <img src="{{ aux.imagen.url }}" class="card-img-top">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'app/img/imagen_rota.jfif'%}" alt="Card image">
+                    {% endif %}
+                    <div class="col-3 col-sm">
+                        <span class="oferta">
+                            Oferta
+                        </span>
+                    </div>
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ aux.nombre| capfirst }}</h5>
+                        <h6 class="card-title">{{ aux.descripcion| capfirst }}</h6>
+                        <p class="card-text">
+                            <s>$15.990</s> <br>
+                            <b class="precio" style="font-size: medium;"> ${{ aux.precio| intcomma }} </b>
+                        </p>
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigoProducto" id="codigoProducto" value="{{ aux.codigo }}">
+                            <input type="hidden" name="nombreProducto" id="nombreProducto" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precioProducto" id="precioProducto" value="{{ aux.precio }}">
+                            <input type="hidden" name="stockProducto" id="stockProducto" value="{{ aux.stock }}">
+                            <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                            <input type="submit" value="Agregar Carrito" style="cursor: pointer;"
+                                class="btn btn-primary btn-sm ml-auto">
+                        </form>
+                        <h6 class="stock"> Stock: {{ aux.stock }} </h6>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>
+
+<!--Suscripción-->
+<div class="container-sus">
+    <div class="conten-sus">
+        <h2>Suscríbete y haz una donación a la fundación sin fines de lucro!...</h2>
+        <p>¡¡Sé el primero en enterarte de nuestras novedades!! </p>
+        <form action="" style="text-align: center;" method="POST">
+            {% csrf_token %}
+            
+            <input type="hidden" name="usuario" id="usuario" value="{{ user.username }}">
+            <input type="hidden" name="suscripcion1" id="suscripcion1" value="True">
+            <button type="submit" class="btn-sus" data-bs-toggle="modal" data-bs-target="#myModal" name="btnAccion"
+                id="btnAccion" value="suscripcion">suscribete<i class="fa fa-bell"></i></button>
+
+        </form>
+    </div>
+</div>
+<!--Modal suscripción-->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">¡¡Felicidades!!</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h5>Has obtenido un 5% de descuento en el total de tú proxima compra.</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

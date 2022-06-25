@@ -1,0 +1,103 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+
+
+{% block contenido %}
+
+<section>
+
+
+    <script>
+        function eliminarProducto(codigo){
+            Swal.fire({
+                "title": "¿Estas seguro?",
+                "text": "Esta acción no se puede deshacer",
+                "icon": "question",
+                "showCancelButton":true,
+                "cancelButtonText": "No, cancelar",
+                "confirmButtonText": "Si, eliminar",
+                "reverseButtons":true,
+                "confirmButtonColor": "#dc3545",
+
+            })
+            .then(function(result) {
+                if(result.isConfirmed) {
+                    window.location.href = "/eliminar/"+codigo
+                }
+            })
+        }
+    </script>
+
+            {% csrf_token %}
+
+
+
+
+    <div class="col-12 col-md-10 offset-md-1">
+        <br>
+        <h2>Listado de Productos</h2>
+        <br>
+        <table class="table table-striped table-condensed table-responsive-md">
+            <thead>
+                <tr>
+                    <th>CODIGO</th>
+                    <th>NOMBRE</th>
+                    <th>MARCA</th>
+                    <th>PRECIO</th>
+                    <th>STOCK</th>
+                    <th>DESCRIPCION</th>
+                    <th>TIPO</th>
+                    <th>IMAGEN</th>
+                    <th>FECHA INGRESO</th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>
+
+            {% for aux in listarProductos %}
+
+
+            <tr>
+                <td> {{ aux.codigo }} </td>
+                <td> {{ aux.nombre| title }} </td>
+                <td> {{ aux.marca| title }} </td>
+                <td> {{ aux.precio| intcomma }} </td>
+                <td> {{ aux.stock }} </td>
+                <td> {{ aux.descripcion| title }} </td>
+                <td> {{ aux.tipo| title }} </td>
+                <td>
+                    <img src="{{ aux.imagen.url }}" width="80px" height="70px">
+                 </td>
+                <td> {{ aux.create_at }} </td>
+                <td>
+                    <a href="{%url 'modificar_productos' aux.codigo %}" class="btn btn-info btn-sm">Modificar</a>
+                    {% if perms.app.delete_producto %}
+                    <a href="#" onclick="eliminarProducto({{ aux.codigo }})"  class="btn btn-danger btn-sm">Eliminar</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

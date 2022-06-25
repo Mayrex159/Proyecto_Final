@@ -1,0 +1,89 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&C Flower Shop</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css ' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css ' %}">
+</head>
+
+<body class="cuerpo-body1">
+
+    <!--w-75 (75% del ancho) - rounded (puntas redondeadas) shadow (sombreado bordes)-->
+    <div class="container w-75 bg-primary mt-5 rounded shadow">
+        <div class="row align-items-lg-stretch">
+            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
+            <div class="col bg-white p-5 rounded-end">
+                <!--Logo del login y texto alineado al lado derecho-->
+                <div class="text-end">
+                    <img src="{% static 'app/img/logo.png' %}" width="100" alt="">
+                </div>
+                <!--Texto del login alineado al centro con padding-top y margin-botton.. -->
+                <h2 class="fw-bold text-center pt-5 mb-5">Bienvenido</h2>
+
+                <!--LOGIN-->
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+
+                    <span>No tienes cuenta? <a href="{% url 'registro_usuarios' %}">Regístrate</a></span> <br>
+                </form>
+
+                <!--LOGIN CON RRSS-->
+                <!--container con w-100 (ancho total)-->
+                <div class="container w-100 mb-5 pt-5">
+                    <div class="row text-center">
+                        <div class="col-12"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <a href="https://www.facebook.com">
+                                <button class="btn btn-outline-primary w-100 mb-1 pt-1">
+                                    <div class="row align-items-center">
+                                        <!--predeterminado display none, pero si es md se muestre en block-->
+                                        <div class="col-2 d-none d-md-block">
+                                            <img src="{% static 'app/img/fb.png' %}" width="32" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-10 text-center">
+                                            Facebook
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.google.com">
+                                <button class="btn btn-outline-danger w-100 mb-1 pt-1">
+                                    <div class="row align-items-center">
+                                        <!--predeterminado display none, pero si es md se muestre en block-->
+                                        <div class="col-2 d-none d-md-block">
+                                            <img src="{% static 'app/img/google.png' %}" width="32" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-10 text-center">
+                                            Google
+                                        </div>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

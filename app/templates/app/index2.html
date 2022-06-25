@@ -1,0 +1,194 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% block contenido %}
+
+
+    <!--Carousel-->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'app/img/carousel1.jpg' %}" height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lorem, ipsum dolor.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sunt.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'app/img/carousel2.jpg' %}" height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lorem, ipsum dolor.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, suscipit?</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'app/img/carousel3.jpg' %}" height="400" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lorem, ipsum dolor.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, temporibus!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Secciones-->
+    <main>
+        <section>
+            <div class="container">
+                <div class="row1">
+                    <div class="col-12 text-center p-4">
+                        <h2 class="text-h2">Más color a tu vida! </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur labore minima, totam
+                            nam repellat reiciendis earum id quisquam libero? Dolore labore amet repellat veniam
+                            incidunt tenetur corrupti corporis? Quae tempora harum repellat repudiandae, corporis libero
+                            quos, saepe molestias deserunt quis doloribus unde inventore quaerat maxime aspernatur dicta
+                            ea. Molestias, eveniet eligendi nesciunt necessitatibus vero, hic quibusdam magni sunt
+                            recusandae nobis earum excepturi expedita veniam laboriosam corporis distinctio adipisci
+                            culpa harum assumenda quisquam ad unde? Culpa ipsam velit, vel vitae quas corporis earum
+                            hic! Facere placeat incidunt ipsam, atque beatae necessitatibus provident quia accusamus a
+                            blanditiis rerum vero, excepturi nihil ipsa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Primera Sección de productos destacados-->
+        <section>
+            <div class="container">
+                <div class="row p-5">
+                    <h4 class="productos-destacados">RECOMENDADO PARA TÍ</h4>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/Aloe_vera.jpg' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Aloe Vera</h5>
+                                <p class="card-text">
+                                    <s>$15.990</s> <br>
+                                    <b class="precio" style="font-size: medium;">$15.190</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/cactus_espinas_rojas.jpg' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cactus espinas rojas</h5>
+                                <p class="card-text">
+                                    <s>$20.990</s> <br>
+                                    <b class="precio" style="font-size: medium;">$19940</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/jardineria1.jpg' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Set de jardineria</h5>
+                                <p class="card-text">
+                                    <s>$7.890</s> <br>
+                                    <b class="precio" style="font-size: medium;">$7.495</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/rosa1.jpg' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Rosas</h5>
+                                <p class="card-text">
+                                    <s>$9.600</s> <br>
+                                    <b class="precio" style="font-size: medium;">$9.110</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/carretilla.png' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Carretilla</h5>
+                                <p class="card-text">
+                                    <s>$65.990</s> <br>
+                                    <b class="precio" style="font-size: medium;">$62.690</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="card" style="width:300px; height: 415px;">
+                            <img class="card-img-top" src="{% static 'app/img/soplador_hojas.jpg' %}" alt="Card image">
+                            <div class="col-3 col-sm">
+                                <span class="oferta">
+                                    Oferta
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Soplador de hojas</h5>
+                                <p class="card-text">
+                                    <s>$35.980</s> <br>
+                                    <b class="precio" style="font-size: medium;">$34.180</b>
+                                </p>
+                                <a href="#" class="btn btn-primary">Agregar</a>
+                                <h6 class="stock">Stock: </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

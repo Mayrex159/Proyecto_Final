@@ -1,0 +1,51 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css ' %}">
+</head>
+
+<body class="body_cliente">
+    <form action="" class="form-registro" method="POST">
+        <h4>Formulario de registro</h4>
+
+        {% csrf_token %}
+
+            {{ form|crispy }}
+        <input type="checkbox" class="form-check-input" name="connected" required>
+        <label for="connected" class="form-check-label">Estoy de acuerdo con Terminos y Condiciones</label>
+
+        <input type="hidden" name="Alias_Usuario" id="Alias_Usuario" value="{{ alias_usuario }}">
+        <input type="hidden" name="Nombre_Usuario" id="Nombre_Usuario" value="{{ nombre_usuario }}">
+        <input type="hidden" name="Apellido_Usuario" id="Apellido_Usuario" value="{{ apellido_usuario }}">
+        <input type="hidden" name="correo_Usuario" id="correo_Usuario" value="{{ correo_usuario }}">
+        <input type="hidden" name="Password" id="Password" value="{{ password }}">
+        <input type="hidden" name="Repetir_Password" id="Repetir_Password" value="{{ repetir_password }}">
+        <input type="hidden" name="Tipo" id="Tipo" value="{{ tipo }}">
+
+
+        <input class="btn btn-primary" style="cursor: pointer;"  type="submit" value="Registrar">
+    </form>
+    {{mensaje}}
+
+
+
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script>
+        Swal.fire({
+            "title": "Felicitaciones",
+            "text": "{{m}}",
+            "icon": "success"
+        })
+    </script>
+</body>
+</html>

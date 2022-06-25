@@ -1,0 +1,61 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+
+
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-destacados">API EXTERNOS TITANS</h4>
+            {% for aux in listaShingekyTitans %}
+            
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 440px;">
+                    <img src="{{ aux.picture_url }}" class="card-img-top">
+                    <div class="col-3 col-sm">
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{ aux.id }}</h6>
+                        <h5 class="card-title">{{ aux.name }}</h5>
+                        <h6 class="card-title">{{ aux.gender }}</h6>
+                        
+
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!--Sección de apiHP-->
+<section>
+    <div class="container">
+        <div class="row p-5">
+            <h4 class="productos-destacados">API EXTERNOS PERSONAJES</h4>
+            {% for aux in listaShingeky %}
+            
+            <div class="col-12 col-sm-4">
+                <div class="card" style="width:300px; height: 440px;">
+                    <img src="{{ aux.picture_url }}" class="card-img-top" style="width: 300px; height: 300px;">
+                    <div class="col-3 col-sm">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.id }}</h5>
+                        <h6 class="card-title">{{ aux.name }}</h6>
+                        <h6 class="card-title">{{ aux.gender }}</h6>
+                        <h6 class="card-title">{{ aux.created_at }}</h6>                        
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

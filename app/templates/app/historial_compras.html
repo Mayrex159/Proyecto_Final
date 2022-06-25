@@ -1,0 +1,88 @@
+{% extends 'app/base_2.html' %}
+{% load static %}
+{% block contenido %}
+
+
+<div class="container-1">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <!--INICIO HISTORIAL DE COMPRAS-->
+            <div class="container mt-5">
+                <h2 class="historial" style="font-family: serif; text-align: center; font-style: italic;">Historial
+                    de pedidos</h2><br>
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <br>
+                <table class="table table-bordered table-responsive-sm bg-light">
+                    <thead>
+                        <tr>
+                            <th>N° Seguimiento</th>
+                            <th>Fecha de compra</th>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                            <th>Monto Total</th>
+                            <th>Estado de pedido</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <tr>
+                            <td>789456123789</td>
+                            <td>11/04/2022</td>
+                            <td>Lirios</td>
+                            <td>$13.990</td>
+                            <td>2</td>
+                            <td>$27.980</td>
+                            <td>Preparando</td>
+                        </tr>
+                        <tr>
+                            <td>123456789123</td>
+                            <td>08/04/2022</td>
+                            <td>Dalias </td>
+                            <td>$8.990</td>
+                            <td>10</td>
+                            <td>$80.990</td>
+                            <td>En transito</td>
+                        </tr>
+                        <tr>
+                            <td>987123654789</td>
+                            <td>15/07/2021</td>
+                            <td>Cactus San Pedro</td>
+                            <td>$10.990</td>
+                            <td>23</td>
+                            <td>$252.770</td>
+                            <td>Entregado</td>
+                        </tr>
+                        <tr>
+                            <td>987654321098</td>
+                            <td>25/12/2020</td>
+                            <td>Lavanda</td>
+                            <td>$15.990</td>
+                            <td>24</td>
+                            <td>$383.760</td>
+                            <td>Entregado</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $("#myInput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+            <a href="{% url 'carrito' %}" style="text-decoration: none;">
+                <button class="btn-volver">Volver a Carrito</button>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

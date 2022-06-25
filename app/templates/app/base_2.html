@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&C Flower Shop</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css ' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css ' %}">
+
+</head>
+
+<body>
+    <!-- Menú navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <!--Inicio .container-->
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index2' %}">
+                <img class="logotipo" src="{% static 'app/img/logo.png' %}" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index2' %}">
+                            <i class="fa fa-house-chimney"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" aria-current="page" href="{% url 'productos' %}">
+                            <i class="fa fa-basket-shopping"></i>
+                            Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'carrito' %}">
+                            <i class="fa fa-cart-shopping"></i>
+                            Carrito
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="usuario" src="{% static 'app/img/usu.png' %}" alt="">
+                        </a>
+                        <ul class="dropdown-menu" style="font-size: small; font-family: serif; font-style: italic;"
+                            aria-labelledby="navbarScrollingDropdown">
+                            <li>Bienvenido {{ user.username }} </li>
+                            <li><a class="dropdown-item" href="{% url 'perfil_usuario' %}">Mis Datos</a></li>
+                            {% if user.is_staff == 1%}
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/admin/">Administración</a></li>
+                            {% endif %}
+                            {% if user.is_staff == 1%}
+                            <li><a class="dropdown-item" href="{% url 'agregar_productos' %}">Agregar Productos</a></li>
+                            {% endif %}
+                            {% if user.is_staff == 1%}
+                            <li><a class="dropdown-item" href="{% url 'listar_productos' %}">Listar Productos</a></li>
+                            {% endif %}
+                            <li><a class="dropdown-item" href="{% url 'historial_compras' %}">Mis Compras</a></li>
+                            <li><a class="dropdown-item" href="{% url 'productosapi' %}">Productos Api</a></li>
+                            <li><a class="dropdown-item" href="{% url 'productosapiexternos' %}">Productos Api Externos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'despacho' %}">Seguimiento de Pedidos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}"> <b>Cerrar Sesión</b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Fin .container-->
+    </nav>
+
+    <!--SECCION BLOCK CONTENIDO-->
+    {% block contenido %}
+
+    <!--FIN SECCION BLOCK CONTENIDO-->
+    {% endblock %}
+
+
+    <footer>
+        <div class="d-flex justify-content-between" style="background-color:rgb(229, 229, 229);">
+            <p>© 2022 M&C Flower Shop tu tienda de plantas online.</p>
+            <img src="{% static 'app/img/webpayplus.png' %}" width="250" alt="">
+        </div>
+    </footer>
+
+
+    <!--Scripts-->
+    <script src="https://kit.fontawesome.com/ead5860e29.js" crossorigin="anonymous"></script>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/js/carrito.js' %}"></script>
+    <script src="{% static 'app/js/sweetalert.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% if messages %}
+        {% for m in messages %}
+    <script>
+        Swal.fire({
+            "title": "Felicitaciones",
+            "text": "{{m}}",
+            "icon": "success"
+        })
+    </script>
+    {% endfor %}
+    {% endif %}
+
+
+</body>
+
+</html>
